@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:18
+    container_name: medimind-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: medimind
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    container_name: medimind-redis
+    restart: always
+    ports:
+      - "6379:6379"
